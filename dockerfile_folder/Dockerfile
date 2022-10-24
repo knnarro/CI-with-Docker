@@ -1,8 +1,8 @@
 # 베이스 이미지
-FROM baseImage
+FROM alpine
 
 # 추가적으로 필요한 파일 다운로드
-RUN command
+# RUN command
 
 # 컨테이너 시작 시 실행될 명령어
-CMD [ "executable" ]
+CMD [ "echo", "hello" ]
