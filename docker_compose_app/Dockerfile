@@ -1,11 +1,9 @@
-FROM node:10
+FROM node:14
 
 WORKDIR /usr/src/app
 
-COPY package.json ./
+COPY ./ ./
 
 RUN npm install
-
-COPY ./ ./
 
 CMD ["node", "index.js"]
