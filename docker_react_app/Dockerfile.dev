@@ -1,0 +1,14 @@
+FROM node:alpine
+
+WORKDIR usr/src/app
+
+COPY package.json ./
+
+# 상단에서 COPY된 파일의 변화가 있다면 RUN 명령어가 실행될 것
+# 실행 후 node_modules 생성
+RUN npm install
+
+# 로컬의 node_modules가 있다면 복사되어 위의 생성했던 node_modules와 중복됨 -> 로컬의 node_modules 삭제 필요
+COPY ./ ./
+
+CMD ["npm","run","start"]
