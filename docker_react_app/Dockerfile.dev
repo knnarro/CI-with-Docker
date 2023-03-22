@@ -8,7 +8,7 @@ COPY package.json ./
 # 실행 후 node_modules 생성
 RUN npm install
 
-# 로컬의 node_modules가 있다면 복사되어 위의 생성했던 node_modules와 중복됨 -> 로컬의 node_modules 삭제 필요
+# 로컬에 node_modules가 있다면 복사되어 위의 생성했던 node_modules와 중복됨 -> 로컬의 node_modules 삭제 필요
 COPY ./ ./
 
 CMD ["npm","run","start"]
